@@ -39,8 +39,9 @@ void CTI::afiseazaStudenti(int n, struct Student *ptr_student){
 	//printing border
 	cout << setfill('-') << setw(1) << "+" << setw(15) << "-" << setw(1) << "+" << setw(15) << "-" << setw(1) << "+" << setw(5) << "-" << setw(1) << "+" << endl;
 }
-void CTI::dealocaStudent(struct Student *ptr_student){
-	delete[] ptr_student;
+
+void CTI::dealocaGrupa(struct Grupa *ptr_grupa){
+	delete[] ptr_grupa;
 }
 
 void CTI::citesteGrupa(struct Grupa *ptr_grupa){
@@ -105,7 +106,7 @@ Grupa CTI::sorteazaDescrescator(struct Grupa *ptr_grupa){
 
 	for (j = 1; j <= ptr_grupa->nrStudenti&&flag; j++) {
 		flag = 0;
-		for (i=0 ; i <ptr_grupa->nrStudenti-1; i++) {
+		for (i=0 ; i < ptr_grupa->nrStudenti-1; i++) {
 			if (ptr_grupa->tabloulDeStudenti[i +1].nota > ptr_grupa->tabloulDeStudenti[i].nota) {
 				tmp[1] = ptr_grupa->tabloulDeStudenti[i];
 				ptr_grupa->tabloulDeStudenti[i] = ptr_grupa->tabloulDeStudenti[i + 1];
@@ -115,7 +116,28 @@ Grupa CTI::sorteazaDescrescator(struct Grupa *ptr_grupa){
 		}
 	}
 	return *ptr_grupa;
-	return *ptr_grupa;
+}
+
+int CTI::notaMaximaGrupa(struct Grupa *ptr_grupa){
+	int i; 
+	int max = 0;
+	for(i = 0; i < ptr_grupa->nrStudenti; i++ ){
+		if(ptr_grupa->tabloulDeStudenti[i].nota > max){
+			max = ptr_grupa->tabloulDeStudenti[i].nota;
+		}
+	}
+	return max;
+}
+
+int CTI::mediaGrupei(struct Grupa *ptr_grupa){
+	int i; int mediaGenerala; int temp = 0;
+
+	for(i = 0; i < ptr_grupa->nrStudenti; i++)
+	{
+		temp = temp + ptr_grupa->tabloulDeStudenti[i].nota;
+	}
+
+	return mediaGenerala = temp / ptr_grupa->nrStudenti;
 }
 
 

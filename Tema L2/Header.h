@@ -21,12 +21,12 @@ namespace CTI
 		Student *tabloulDeStudenti;
 	};
 	Grupa sorteazaAlfabetic(struct Grupa *ptr_grupa);//done
-	Grupa sorteazaDescrescator(struct Grupa *ptr_grupa);//
+	Grupa sorteazaDescrescator(struct Grupa *ptr_grupa);//done
 	void citesteGrupa(struct Grupa *ptr_grupa);//done
 	void afiseazaGrupa(struct Grupa *ptr_grupa);//done
-	void dealocaGrupa(struct Grupa *ptr_grupa);
-	Grupa notaMaximaGrupa(struct Grupa *ptr_grupa);
-	void mediaGrupei(struct Grupa *ptr_grupa);
+	void dealocaGrupa(struct Grupa *ptr_grupa);//done
+	int notaMaximaGrupa(struct Grupa *ptr_grupa);//done
+	int mediaGrupei(struct Grupa *ptr_grupa);//done
 }
 #endif
 
